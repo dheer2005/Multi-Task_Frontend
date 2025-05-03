@@ -1,0 +1,15 @@
+.mainCards{
+  width: 300px;
+  height: 300px;
+}
+
+.card-body>img{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.word-to-PdfClass>img{
+  width: 100px;
+  height: 100px;
+}

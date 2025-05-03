@@ -1,0 +1,39 @@
+<div 
+  class="converter drop-zone d-flex justify-content-center align-items-center flex-column"
+  (dragover)="onDragOver($event)" 
+  (dragleave)="onDragLeave($event)" 
+  (drop)="onDrop($event)"
+  [class.dragging]="isDragging"
+>
+<div class="d-flex justify-content-center align-items-center mt-3" >
+    <i class="fa-solid fa-arrow-left backBtn btn m-2 border" (click)="back()"></i>
+    <h3 class="pt-2 fw-bold">Pdf To Word</h3>
+  </div>
+  <div class="converterMain">
+    <h4 >Drag and Drop Documents Here to Get Started!</h4>
+    <p class="text-center">
+      Use the button below to upload your documents to pdfFiller and begin editing, signing, and sharing. pdfFiller supports PDF, Word.
+    </p>
+    <form action="" class="d-flex justify-content-center align-items-center flex-column" (ngSubmit)="onSubmit()">
+      <input class="ms-5" type="file" (change)="onFileSelected($event)" *ngIf="!PdfToWordselectedFile">
+      <div class="selectedFile d-flex justify-content-center align-items-center" *ngIf="PdfToWordselectedFile">
+        <img src="https://www.bing.com/th/id/OIP.093Tvdo7Xfv1-c5CdVROigHaHa?w=182&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="" width="30px" height="30px">
+        <p class="pt-3 me-2">{{PdfToWordselectedFile.name}}</p>
+        <i class="fa-solid fa-xmark" (click)="fileDelete()"></i>
+      </div>
+      
+      <button type="submit" class="btn btn-secondary mt-4">Convert</button>
+    </form>
+    <form class="d-flex justify-content-center align-items-center flex-column" (ngSubmit)="OnDownload()">
+        <!-- <p>{{convertedResponse.FileName}}</p> -->
+        <button type="" class="m-2 btn btn-secondary" *ngIf="convertedFile.length>0">Download</button>
+    </form>
+  </div>
+</div>
+
+
+<div class="" style="position: absolute; top: 50vh; left: 50vw;" *ngIf="isLoader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>

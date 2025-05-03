@@ -1,0 +1,144 @@
+
+  
+  #container {
+    width: 320px;
+    height: 515px;
+  }
+  
+  .name {
+    color: whitesmoke;
+    text-align: center;
+  }
+  
+  #calculator {
+    width: 320px;
+    height: 515px;
+    background-color: #1C2833;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    margin: 0px auto;
+    top: 20px;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                0 6px 20px rgba(0, 0, 0, 0.19);
+  }
+  
+  #result {
+    height: 120px;
+  }
+  
+  #history {
+    text-align: right;
+    height: 20px;
+    margin: 0 10px;
+    padding-top: 20px;
+    font-size: 20px;
+    color: wheat;
+    padding-bottom: 10px;
+    
+  }
+  
+  #output {
+    text-align: right;
+    margin: 20px 10px;
+    height: 20px;
+    font-size: 20px;
+    color: wheat;
+    font-family: digital-7;
+  }
+  
+  #output>input{
+    text-align: right;
+    /* margin: 0 20px; */
+    border: none;
+    background: transparent;
+    color: wheat;
+  }
+
+
+  #history>input{
+    text-align: right;
+    /* margin: 35px 4px; */
+    margin-bottom: 10px;
+    border: none;
+    background: transparent;
+    color: wheat;
+  }
+
+  #keyboard {
+    height: 400px;
+  }
+  
+  .operator, .number, .empty {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border-radius: 50%;
+    border-width: 0;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+  }
+  
+  .number, .empty {
+    background-color: #212F3D;
+  }
+  
+  .number, .operator {
+    cursor: pointer;
+  }
+  
+  .operator:active, .number:active {
+    font-size: 18px;
+  }
+  
+  .operator:focus, .number:focus, .empty:focus {
+    outline: 0;
+  }
+  
+  button:nth-child(1) {
+    font-size: 20px;
+    background-color: #82E0AA;
+  }
+  
+  button:nth-child(2) {
+    font-size: 20px;
+    background-color: #E59866;
+  }
+  
+  button:nth-child(3) {
+    font-size: 20px;
+    background-color: orange;
+  }
+  
+  button:nth-child(4) {
+    font-size: 20px;
+    background-color: #20b2aa;
+  }
+  
+  button:nth-child(8) {
+    font-size: 20px;
+    background-color: #F1C40F;
+  }
+  
+  button:nth-child(12) {
+    font-size: 20px;
+    background-color: #f08080;
+  }
+  
+  button:nth-child(16) {
+    font-size: 20px;
+    background-color: #7d93e0;
+  }
+  
+  button:nth-child(20) {
+    font-size: 20px;
+    background-color: #9477af;
+  }
+  
+
+  /* .output{
+    color: white;
+  } */

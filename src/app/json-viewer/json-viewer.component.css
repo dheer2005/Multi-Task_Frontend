@@ -1,0 +1,29 @@
+/* json-viewer.component.css */
+
+
+
+.split-container {
+    width: 100%;
+    height:530px;
+    display: flex;
+    gap: 1rem;           
+  }
+  
+  .pane {
+    flex: 1;   
+    border: 1px solid #ccc;
+  }
+
+  .viewer‑pane{
+    overflow-x: auto;
+    background-color: #363030;
+    color: black;
+  } 
+
+  ::ng-deep .custom-scroll > .ngx-json-viewer{
+    overflow: auto !important;
+  }
+  
+  ::ng-deep .custom-scroll > .ngx-json-viewer .segment{
+    width: fit-content;
+  }

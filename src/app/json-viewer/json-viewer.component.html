@@ -1,0 +1,26 @@
+<div class="jsonNav d-flex justify-content-center align-items-center" >
+    <i class="fa-solid fa-arrow-left backBtn btn m-2 border" routerLink=""></i>
+    <h3 class="pt-2 fw-bold">JSON Viewer</h3>
+    <button class="btn btn-secondary ms-2" (click)="view()">Viewer</button>
+</div>
+
+<div class="split-container">
+    <div class="pane editor‑pane">
+      <ace-editor
+        [(text)]="code"
+        [mode]="'json'"
+        style="width: 100%; height: 100%;"
+      ></ace-editor>
+    </div>
+    <div class="pane viewer‑pane">
+      <ngx-json-viewer
+        [json]="data"
+        [expanded]="true"
+        style="width: 100%; height: 100%;"
+        class="custom-scroll"
+      ></ngx-json-viewer>
+    </div>
+
+    <!-- <button (click)="updateData()">Update Data</button> -->
+  </div>
+  
