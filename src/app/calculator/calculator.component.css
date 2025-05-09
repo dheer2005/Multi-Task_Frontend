@@ -5,6 +5,10 @@
     height: 515px;
   }
   
+  .calc-head{
+    /* padding-top: 4px !important; */
+  }
+
   .name {
     color: whitesmoke;
     text-align: center;

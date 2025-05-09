@@ -22,4 +22,11 @@ export class JSONViewerComponent {
       alert('Invalid JSON');
     }
   }
+
+  copy(){
+    navigator.clipboard.writeText(JSON.stringify(this.data))
+    .then(()=>{alert("Copied text!")})
+    .catch(err=>alert(err));
+  }
+
 }
