@@ -1,6 +1,6 @@
 .mainCards{
     width: 300px;
-    height: 300px;
+    height: 18.75rem;
 }
 
 .card-body>img{
@@ -8,3 +8,4 @@
     height: 100px;
     margin-bottom: 20px;
 }
+

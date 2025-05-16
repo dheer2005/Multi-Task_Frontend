@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-center align-items-center mt-3" >
+  <i class="fa-solid fa-arrow-left backBtn btn m-2 border" routerLink="/converterHome"></i>
+  <h3 class="pt-2 fw-bold">Currency Converter</h3>
+</div>
+
+<div class="currencyMain container pt-2">
+
+    <form action="" #currencyForm="ngForm">
+
+   
+        <div class="d-flex flex-column">
+            <label class="d-clock" for="">Amount</label>
+            <input type="number"
+                [disabled]="!fromCurrency"
+                title="{{ !fromCurrency }}"
+                class="form-control"
+                name="amount"
+                [(ngModel)]="displayAmount"
+                (input)="onAmountInput($event)"
+                id="fromCurrency"
+                placeholder="Enter Amount">
+                <small *ngIf="amount !== null && fromCurrency">
+                    Preview: {{ formatCurrency(amount!, fromCurrency) }}
+                </small>
+        </div>
+
+        <div class="middle d-flex justify-content-center align-items-center ">
+            <div>
+                <label class="d-block" for="id">From</label>
+                <select class="d-block selectClass" name="fromCurrency" name="fromCurrency" [(ngModel)]="fromCurrency" id="from" (change)="onFromCurrencyChange()">
+                    <option *ngFor="let currency of rates | keyvalue" [value]="currency.key" [disabled]="currency.key === toCurrency">{{currency.key}}</option>
+                </select>
+            </div>
+            <img class="m-3 arrowImg" src="https://static.vecteezy.com/system/resources/previews/002/553/974/original/two-arrows-pointing-in-different-directions-line-style-icon-free-vector.jpg" alt="" width="30" height="30" (click)="rotateImage()" [style.transform]="'rotate(' + rotation + 'deg)'">
+            <div>
+                <label class="d-block" for="to">To</label>
+                <select class="d-block selectClass" name="toCurrency" [(ngModel)]="toCurrency" id="to">
+                    <option *ngFor="let currency of rates | keyvalue" [value]="currency.key" [disabled]="currency.key === fromCurrency">{{currency.key}}</option>
+                </select>
+                
+            </div>
+        </div>
+
+        <div class="d-flex flex-column">
+            <label class="d-clock" for="">ConvertedTo</label>
+            <input class="convertedTo form-control" type="text"
+                    [value]="formattedConvertedAmount"
+                    id="toCurrency"
+                    placeholder="Converted Amount"
+                    [disabled]="!formattedConvertedAmount"
+                    readonly>
+        </div>
+    </form>
+    <small class="d-block">Note: Before enter the amount you have to select From Currency </small>
+<button class="mt-2 btn btn-primary" (click)="convert()" >Convert</button>
+
+</div>

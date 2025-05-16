@@ -1,0 +1,50 @@
+.currencyMain{
+    width: 50%;
+    height: 400px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.inputAmout{
+    width: 30px !important;
+}
+
+.middle>img{
+    border-radius: 5px;
+}
+
+.middle>div>select{
+    width: 100%;
+}
+
+.middle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.selectClass{
+    /* width: 200px !important; */
+    height: 30px;
+    border-radius: 5px;
+}
+
+.form-control{
+    border-radius: 2px;
+    outline: none;
+}
+
+.arrowImg{
+    margin-top: 25px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: transform .3s ease-in-out;
+    /* transform: rotate(90deg); */
+}
+
+.selectDiv2{
+    /* margin-left: 5px; */
+}
+
+.middle{
+    
+}

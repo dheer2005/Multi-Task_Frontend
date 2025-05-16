@@ -5,3 +5,10 @@ body {
   }
 
   
+  :root {
+  --percentage: 70;
+  --thickness: 22px;
+  --color: transparent;
+  --width: 500px;
+  --angle: -125deg;
+}

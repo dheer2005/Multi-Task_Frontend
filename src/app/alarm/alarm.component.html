@@ -1,0 +1,94 @@
+<div class="d-flex justify-content-center align-items-center mt-3" >
+  <i class="fa-solid fa-arrow-left backBtn btn m-2 border" routerLink=""></i>
+  <h3 class="pt-2 fw-bold">Alarm</h3>
+</div>
+
+<p class="text-center">{{currentTime | date:"mediumTime"}} </p>
+
+<div class="MainSection container d-flex flex-wrap">
+  <div class="addBtn">
+  <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus"></i></button>
+</div>
+    <div class=" alarmCards d-flex justif-content-center flex-column" *ngFor="let alarm of alarmList">
+      <div *ngIf="!isAlarmFiltered(alarm.id) && !playedAlarms.has(alarm.id) ">
+        <div class="labelIcon">
+              <i class="fa-solid fa-tag"></i>
+              <input type="text" name="" id="" [value]="alarm.title" placeholder="Add label" readonly>
+          </div>
+          <div class="time">
+              <input type="datetime" name="" [value]="alarm.created | date" id="" readonly>
+              <input type="time" name="" id="" [value]="alarm.from" >
+          </div>
+          <div class="buttons text-center mt-4">
+              <button class="btn btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" (click)="alarmForUpdate(alarm)">update</button>
+              <button class="btn btn-danger" (click)="delete(alarm.id)">Delete</button>
+          </div>
+      </div>
+      <div class="forAlarmSound d-flex justify-content-center align-items-center h-100 " *ngIf="playedAlarms.has(alarm.id)">
+        <button type="button" class=" btn btn-secondary ms-2" (click)="stopSound2(alarm.id)">Stop</button>
+      </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal for new Alarm-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add Alarm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container d-flex justif-content-center flex-column">
+        <div class="labelIcon">
+            <i class="fa-solid fa-tag"></i>
+            <input type="text" name="label" [(ngModel)]="alarmTitle" id="" placeholder="Add label">
+        </div>
+        <div class="time">
+            <input type="date" name="created" id="" [(ngModel)]="created" placeholder="created">
+            <input type="time" name="time" [(ngModel)]="time" id="">
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="createAlarm()" data-bs-target="#staticBackdrop" data-bs-dismiss="modal">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal for update -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Update Alarm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container d-flex justif-content-center flex-column">
+        <div class="labelIcon">
+            <i class="fa-solid fa-tag"></i>
+            <input type="text" name="label" [(ngModel)]="this.updateTitle" id="" placeholder="Add label">
+        </div>
+        <div class="time">
+            <input type="date" name="created" id="" [(ngModel)]="this.updateCreated" placeholder="created">
+            <input type="time" name="time" [(ngModel)]="this.updateTime" id="">
+        </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="update(updateId!)" data-bs-target="#staticBackdrop2"data-bs-toggle="modal">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

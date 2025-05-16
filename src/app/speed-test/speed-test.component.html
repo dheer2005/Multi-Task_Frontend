@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-center align-items-center mt-3" >
+  <i class="fa-solid fa-arrow-left backBtn btn m-2 border" routerLink=""></i>
+  <h3 class="pt-2 fw-bold">Internet Speed Tester</h3>
+</div>
+
+
+
+<div class="mainSection d-flex justify-content-center align-items-center flex-column mt-4">
+  <div class="row bothSpeedContainer d-flex justify-content-center align-items-center mb-3">
+    <div class="firstContainer col-12 col-sm-12 col-md-3 col-lg-3">
+      <div id="download" class="mb-5">
+        Download <span class="d-block ">{{ downloadAvg }} Mbps</span>
+      </div>
+      <div class="speedometer-container">
+        <div class="speedometer">
+          <div class="speedNumber">
+             <span class="div0">0</span>
+             <span class="div2">200</span>
+             <span class="div4">400</span>
+             <span class="div6">600</span>
+             <span class="div8">800</span>
+             <span class="div10">1000</span>
+          </div>
+           
+            <div class="needle" id="needle" [style.transform]="'rotate(' + downloadRotation + 'deg)'"></div>
+            <div class="speed-label" id="speedLabel">{{downloadAvg}} <span>Mbps</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class=" secondContainer col-12 col-sm-12 col-md-3 col-lg-3 ">
+      <div id="upload" class=" mb-5">
+        Upload <span class="d-block">{{ uploadAvg }} Mbps</span>
+      </div>
+      <div class="secondSpeedBox speedometer-container">
+        <div class="speedometer">
+          <div class="speedNumber">
+             <span class="div0">0</span>
+             <span class="div2">200</span>
+             <span class="div4">400</span>
+             <span class="div6">600</span>
+             <span class="div8">800</span>
+             <span class="div10">1000</span>
+          </div>
+           
+            <div class="needle" id="needle" [style.transform]="'rotate(' + uploadRotation + 'deg)'"></div>
+            <div class="speed-label" id="speedLabel">{{uploadAvg}} <span>Mbps</span></div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div id="parent_of_button ">
+    <button id="run_button" (click)="testSpeeds()">Run</button>
+  </div>
+</div>
+

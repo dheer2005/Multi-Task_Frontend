@@ -1,0 +1,191 @@
+
+
+#download,
+#upload {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+#download span,
+#upload span {
+  color: #40424e;
+  font-size: 0.6em;
+  /* margin-left: 1vw; */
+  text-transform: capitalize;
+}
+
+#download_speed,
+#upload_speed {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+#parent_of_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #23cdfa 0%, #70ffbd 100%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+button {
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
+  font-weight: 900;
+  color: whitesmoke;
+  background: #141526;
+  border: none;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+
+.firstContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.secondContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+/* .speedMeter{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #23cdfa;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speedMeter>meter{
+    border-radius: 50%;
+} */
+
+
+/* .secondSpeedBox{
+  margin-left: 100px !important;
+} */
+
+.speedometer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 75px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 150px 150px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.speedometer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* overflow: hidden; */
+    /* transform: rotate(-90deg); */
+}
+
+.needle {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 50%;
+    height: 2px;
+    background-color: red;
+    transform-origin:right center;
+    transform: rotate(-90deg);
+}
+
+.speed-label {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+.speedNumber{
+  width: 150px;
+  height: 150px;
+  /* border-radius: 50%; */
+  position: relative;
+  /* background-color: aqua; */
+}
+
+.div0{
+  position: absolute;
+  top: 61px;
+  right: 160px;
+}
+
+.div2{
+  position: absolute;
+  top: 8px;
+  left: -10px;
+}
+
+.div4{
+  position: absolute;
+  top: -20px;
+  left: 35px;
+}
+
+.div6{
+  position: absolute;
+  top: -18px;
+  left: 95px;
+}
+
+.div8{
+  position: absolute;
+  top: 11px;
+  right: -10px;
+}
+
+.div10{
+  position: absolute;
+  top: 61px;
+  left: 150px;
+}
+
+.speedometer>div{
+  font-size: 12px;
+}
+
+
+@media (min-width: 100px) and (max-width: 768px){
+  .secondContainer{
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 768px){
+  .secondContainer{
+    margin-left: 100px;
+  }
+}
