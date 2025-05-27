@@ -23,7 +23,6 @@
 }
 
 .selectClass{
-    /* width: 200px !important; */
     height: 30px;
     border-radius: 5px;
 }
@@ -38,13 +37,5 @@
     margin-left: 10px;
     margin-right: 10px;
     transition: transform .3s ease-in-out;
-    /* transform: rotate(90deg); */
 }
 
-.selectDiv2{
-    /* margin-left: 5px; */
-}
-
-.middle{
-    
-}

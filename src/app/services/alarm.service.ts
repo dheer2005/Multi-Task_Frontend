@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AlarmService {
-  private apiUrl = 'https://localhost:7068/api/Job/';
+  private apiUrl = 'https://multitask.bsite.net/api/Job/';
   constructor(private router: Router, private http: HttpClient) { }
   
 

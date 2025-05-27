@@ -7,31 +7,30 @@
 }
 
 .converterMain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
-    height: 300px;
-    border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  height: 300px;
+  border: 2px dashed #ccc;
 }
   
-  .drop-zone.dragging {
-    background-color: #f0f8ff;
-    border-color: #007bff;
-  }
-  
+.drop-zone.dragging {
+  background-color: #f0f8ff;
+  border-color: #007bff;
+}
 
-  .file-info {
-    margin-top: 20px;
-    background: #f6f6f6;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-  }
-  
+.file-info {
+  margin-top: 20px;
+  background: #f6f6f6;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
 
-  .selectedFile>img{
-    background: transparent;
-    mix-blend-mode: color-burn;
-  }
+
+.selectedFile>img{
+  background: transparent;
+  mix-blend-mode: color-burn;
+}

@@ -1,5 +1,3 @@
-
-
 #download,
 #upload {
   color: white;
@@ -14,7 +12,6 @@
 #upload span {
   color: #40424e;
   font-size: 0.6em;
-  /* margin-left: 1vw; */
   text-transform: capitalize;
 }
 
@@ -63,28 +60,6 @@ button {
   flex-direction: column;
 }
 
-
-
-/* .speedMeter{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: #23cdfa;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.speedMeter>meter{
-    border-radius: 50%;
-} */
-
-
-/* .secondSpeedBox{
-  margin-left: 100px !important;
-} */
-
 .speedometer-container {
     display: flex;
     justify-content: center;
@@ -103,8 +78,6 @@ button {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    /* overflow: hidden; */
-    /* transform: rotate(-90deg); */
 }
 
 .needle {
@@ -132,9 +105,7 @@ button {
 .speedNumber{
   width: 150px;
   height: 150px;
-  /* border-radius: 50%; */
   position: relative;
-  /* background-color: aqua; */
 }
 
 .div0{

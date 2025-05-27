@@ -51,7 +51,6 @@
   
   #output>input{
     text-align: right;
-    /* margin: 0 20px; */
     border: none;
     background: transparent;
     color: wheat;
@@ -60,7 +59,6 @@
 
   #history>input{
     text-align: right;
-    /* margin: 35px 4px; */
     margin-bottom: 10px;
     border: none;
     background: transparent;
@@ -139,7 +137,3 @@
     background-color: #9477af;
   }
   
-
-  /* .output{
-    color: white;
-  } */

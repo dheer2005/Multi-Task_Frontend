@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './speed-test.component.html',
   styleUrl: './speed-test.component.css'
 })
-export class SpeedTestComponent implements OnInit{
+export class SpeedTestComponent{
   downloadSpeeds: number[] = [];
   uploadSpeeds: number[] = [];
   downloadAvg?: number;
@@ -22,14 +22,7 @@ export class SpeedTestComponent implements OnInit{
   downloadRotation = 0;
   uploadRotation = 0;
 
-  constructor(private networkService: NetworkService) {
-    
-  }
-
-  ngOnInit() {
-      console.log("running");
-      
-  }
+  constructor(private networkService: NetworkService) {}
 
   getDownloadSpeedAvg(): Observable<any> {
   this.downloadSpeeds = [];
@@ -42,8 +35,6 @@ export class SpeedTestComponent implements OnInit{
       const sum = this.downloadSpeeds.reduce((acc, val) => acc + val, 0);
       this.downloadAvg = parseFloat((sum / this.downloadSpeeds.length).toFixed(2));
       this.downloadRotation =((this.downloadAvg/1000)* 180 <= 180) ? (this.downloadAvg/1000)* 180 : 180;
-      // this.rotation = 144;
-      console.log("Rotation:" , this.downloadRotation);
     })
   );
 }
@@ -59,7 +50,6 @@ export class SpeedTestComponent implements OnInit{
         const sum = this.uploadSpeeds.reduce((acc, val) => acc + val, 0);
         this.uploadAvg = parseFloat((sum / this.uploadSpeeds.length).toFixed(2));
         this.uploadRotation =((this.uploadAvg/1000)* 180 <= 180) ? (this.uploadAvg/1000)* 180 : 180;
-      // console.log("upload list: ",this.uploadSpeeds);
       })
     );
   }

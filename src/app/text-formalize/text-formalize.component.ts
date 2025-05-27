@@ -14,10 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 export class TextFormalizeComponent {
   inputText: string = '';
   outputText: string = '';
-
-
+  
   constructor(private toastrSvc: ToastrService){ }
-
   convertToUpperCase() {
     this.inputText = this.inputText.toUpperCase();
   }
@@ -82,11 +80,7 @@ export class TextFormalizeComponent {
     return res *0.008;
   }
 
-  logLineCount() {
-    // const lineHeight = parseInt(window.getComputedStyle(textArea).lineHeight || '20', 10);
-    // const lines = Math.floor(textArea.scrollHeight / lineHeight);
-    // this.lineCount = lines;
-  }
+  
 
 
   

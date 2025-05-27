@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { AlarmService } from '../services/alarm.service';
 import { AlarmModel } from '../Model/AlarmModel.model';
-import { from } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -28,7 +27,6 @@ export class AlarmComponent implements OnInit {
   filtered: any[] = [];
   filteredIds: any[] = [];
   playedAlarms: Set<number> = new Set();
-  // stopAudio: boolean = true;
   hide:boolean = true;
   
   currentTime: string = new Date(new Date().getTime()+19800000).toISOString().split('.')[0];
@@ -65,7 +63,6 @@ export class AlarmComponent implements OnInit {
   }
 
   stopSound2(alarmId: number){
-    console.log("paused alarm sound");
     if (this.audio) {
       this.playedAlarms.delete(alarmId);
       this.audio.pause();
@@ -110,11 +107,6 @@ export class AlarmComponent implements OnInit {
         x.difference == 0
       );
       this.filteredIds = this.filtered.map((x: any) => ({ id: x.id }));
-
-      // console.log("Updated currentTimeInt:", this.currentTimeInt);
-      // console.log("Updated diffList:", this.diffList);
-      // console.log("Filtered:", this.filtered);
-      // console.log("Filtered IDs:", this.filteredIds);
     }, 1000);
   }
 
@@ -148,28 +140,24 @@ export class AlarmComponent implements OnInit {
       this.alarmTitle = "";
       this.created = "";
       this.time = "";
-      return;
     }else if(this.time == "" && this.created){
       this.toastSvc.error("Please provide Time", "Error");
       this.alarmTitle = "";
       this.created = "";
       this.time = "";
-      return;
     }else if((this.created == undefined || this.created == "") && this.time){
       this.toastSvc.error("Please provide date", "Error");
       this.alarmTitle = "";
       this.created = "";
       this.time = "";
-      return;
     }
-    
   }
 
   alarmListLoader(){
     let count = 0;
     this.alarmSvc.getAllAlarms().subscribe((data:any)=>{
         this.alarmList = data;
-        // console.log("alarm list: ",this.alarmList);
+        console.log("alarm list data: ",this.alarmList);
         this.diffList = data.reduce((acc:any, x:any) => {
           const datePart = x.created.split('T')[0];
           const then = new Date(`${datePart}T${x.from}`).getTime();
@@ -180,12 +168,10 @@ export class AlarmComponent implements OnInit {
            }
           return acc;
         }, {} as {id:number, difference:number});
-        // console.log("diffList: ",this.diffList);
       });
   }
 
   alarmForUpdate(alarm: any){
-    console.log(alarm);
     this.updateId = alarm.id;
     this.updateTitle = alarm.title;
     this.updateCreated = new Date(new Date(alarm.created).getTime()+19800000).toISOString().split('T')[0];
@@ -206,14 +192,10 @@ export class AlarmComponent implements OnInit {
       });
     }else if(this.updateCreated == "" && this.updateTime == ""){
       this.toastSvc.error("Please provide Date and Time", "Error");
-      return;
     }else if(this.updateTime == "" && this.updateCreated){
       this.toastSvc.error("Please provide Time", "Error");
-      return;
     }else if( this.updateCreated == "" && this.updateTime){
       this.toastSvc.error("Please provide date", "Error");
-      return;
     }
-    
   }
 }
